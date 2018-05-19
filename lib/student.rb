@@ -53,6 +53,15 @@ class Student
 
     DB[:conn].execute(sql)
   end
+  def self.count_all_students_in_grade_9
+    sql = <<-SQL
+    SELECT *
+      FROM students
+      WHERE grade = 9
+      SQL
+    
+    DB[:conn].execute(sql, self.name, self.grade)
+  end
 
   def self.drop_table
     sql = "DROP TABLE IF EXISTS students"
