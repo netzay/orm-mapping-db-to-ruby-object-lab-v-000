@@ -68,10 +68,10 @@ class Student
      sql = <<-SQL
     SELECT COUNT(grade) 
     FROM students 
-    WHERE grade >= 11
+    WHERE grade <= 11
       SQL
     
-    DB[:conn].execute(sql)
+    DB[:conn].execute(sql, self.name, self.grade)
   end
 
   def self.drop_table
