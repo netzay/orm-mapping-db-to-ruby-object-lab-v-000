@@ -59,12 +59,9 @@ class Student
     SELECT COUNT(grade) 
     FROM students 
     WHERE grade = 9
-  
-
-
       SQL
     
-    #DB[:conn].execute(sql, self.name, self.grade)
+    DB[:conn].execute(sql)
   end
 
   def self.drop_table
