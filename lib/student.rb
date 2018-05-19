@@ -75,7 +75,7 @@ class Student
     end
   end
   
-   def self.first_X_students_in_grade_10(num)
+  def self.first_X_students_in_grade_10(num)
     sql = <<-SQL
     SELECT * 
     FROM students 
@@ -83,17 +83,17 @@ class Student
     ORDER BY students.id LIMIT ?
     SQL
     DB[:conn].execute(sql, num)
-   end	   
+  end	   
    
-   def self.first_student_in_grade_10
+  def self.first_student_in_grade_10
     sql = <<-SQL
     SELECT *
     FROM students
     WHERE grade = 10
     SQL
     DB[:conn].execute(sql)
-      end.first     
-    end
+    end.first     
+  end
 
   def self.drop_table
     sql = "DROP TABLE IF EXISTS students"
