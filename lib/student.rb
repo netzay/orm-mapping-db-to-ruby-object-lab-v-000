@@ -75,17 +75,17 @@ class Student
     end
   end
   
-  def self.first_X_students_in_grade_10
+  def self.first_student_in_grade_10
     sql = <<-SQL
     SELECT * 
     FROM students
-    WHERE students.grade == 10
+    WHERE students.grade = 10
     LIMIT 1
     SQL
     DB[:conn].execute(sql).collect do |row|
       self.new_from_db(row)
     end.first
-  end
+   end	   
 
   def self.drop_table
     sql = "DROP TABLE IF EXISTS students"
