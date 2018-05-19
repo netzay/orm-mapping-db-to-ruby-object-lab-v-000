@@ -83,7 +83,7 @@ class Student
     ORDER BY students.id LIMIT ?;"
     SQL
     DB[:conn].execute(sql, num)
-    end
+
    end	   
 
   def self.drop_table
