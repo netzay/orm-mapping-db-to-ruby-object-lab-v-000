@@ -53,13 +53,14 @@ class Student
 
     DB[:conn].execute(sql)
   end
+  
   def self.count_all_students_in_grade_9
     sql = <<-SQL
     SELECT COUNT(grade) FROM stduents WHERE grade = 9;
 
       SQL
     
-    DB[:conn].execute(sql, self.name, self.grade)
+    #DB[:conn].execute(sql, self.name, self.grade)
   end
 
   def self.drop_table
