@@ -104,7 +104,7 @@ class Student
       FROM students 
       WHERE grade=10 
       ORDER BY students.id LIMIT ?
-    SQL
+      SQL
     DB[:conn].execute(sql, grade)
   end	   
     
